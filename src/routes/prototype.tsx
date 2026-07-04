@@ -204,7 +204,7 @@ function PrototypePage() {
 
   return (
     <div className="min-h-screen bg-[oklch(0.94_0.005_85)] text-ink">
-      <main className="mx-auto grid max-w-6xl grid-cols-12 gap-6 md:gap-10 px-3 py-6 md:px-6 md:py-12">
+      <main className="mx-auto grid max-w-6xl grid-cols-12 gap-10 px-6 py-12">
         {/* Phone */}
         <section className="col-span-12 md:col-span-8 md:col-start-2">
           <Phone>
@@ -233,11 +233,11 @@ function PrototypePage() {
 /* ---------------- Phone frame ---------------- */
 function Phone({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto w-full max-w-[380px]">
-      <div className="relative rounded-[40px] md:rounded-[52px] border border-ink/20 bg-ink p-2 md:p-3 shadow-[0_30px_60px_-15px_rgba(24,24,40,0.3)]">
-        <div className="relative overflow-hidden rounded-[32px] md:rounded-[42px] bg-paper">
+    <div className="mx-auto w-[380px]">
+      <div className="relative rounded-[52px] border border-ink/20 bg-ink p-3 shadow-[0_50px_100px_-40px_rgba(24,24,40,0.5)]">
+        <div className="relative overflow-hidden rounded-[42px] bg-paper">
           {/* Status bar */}
-          <div className="flex items-center justify-between px-6 pt-3 text-[10px] md:text-[11px] text-ink select-none">
+          <div className="flex items-center justify-between px-6 pt-3 text-[11px] text-ink select-none">
             <span className="font-mono tabular-nums">9:41</span>
             <div className="flex items-center gap-1.5 text-ink/70">
               <Signal className="h-3 w-3" />
@@ -248,9 +248,9 @@ function Phone({ children }: { children: ReactNode }) {
             </div>
           </div>
           {/* Notch */}
-          <div className="absolute left-1/2 top-1 h-4 md:h-5 w-20 md:w-24 -translate-x-1/2 rounded-full bg-ink" />
+          <div className="absolute left-1/2 top-1 h-5 w-24 -translate-x-1/2 rounded-full bg-ink" />
           {/* Scrollable children container */}
-          <div className="h-[600px] md:h-[700px] overflow-y-auto overscroll-contain px-4 md:px-6 pb-6 md:pb-8 pt-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="h-[700px] overflow-y-auto overscroll-contain px-6 pb-8 pt-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {children}
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { _ as Bell, a as Sparkles, b as ArrowLeft, d as Info, f as House, g as Check, h as ChevronRight, i as Trash2, l as MessageCircle, m as Download, n as Wifi, o as Signal, p as FileText, r as User, s as ShieldCheck, u as Lock } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/prototype-BUz0edXr.js
+//#region node_modules/.nitro/vite/services/ssr/assets/prototype-Dusjjl9l.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var PURPOSES = [
@@ -103,7 +103,7 @@ function PrototypePage() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "min-h-screen bg-[oklch(0.94_0.005_85)] text-ink",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
-			className: "mx-auto grid max-w-6xl grid-cols-12 gap-6 md:gap-10 px-3 py-6 md:px-6 md:py-12",
+			className: "mx-auto grid max-w-6xl grid-cols-12 gap-10 px-6 py-12",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 				className: "col-span-12 md:col-span-8 md:col-start-2",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Screen, {
@@ -128,14 +128,14 @@ function PrototypePage() {
 }
 function Phone({ children }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "mx-auto w-full max-w-[380px]",
+		className: "mx-auto w-[380px]",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			className: "relative rounded-[40px] md:rounded-[52px] border border-ink/20 bg-ink p-2 md:p-3 shadow-[0_30px_60px_-15px_rgba(24,24,40,0.3)]",
+			className: "relative rounded-[52px] border border-ink/20 bg-ink p-3 shadow-[0_50px_100px_-40px_rgba(24,24,40,0.5)]",
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "relative overflow-hidden rounded-[32px] md:rounded-[42px] bg-paper",
+				className: "relative overflow-hidden rounded-[42px] bg-paper",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex items-center justify-between px-6 pt-3 text-[10px] md:text-[11px] text-ink select-none",
+						className: "flex items-center justify-between px-6 pt-3 text-[11px] text-ink select-none",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "font-mono tabular-nums",
 							children: "9:41"
@@ -151,9 +151,9 @@ function Phone({ children }) {
 							]
 						})]
 					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute left-1/2 top-1 h-4 md:h-5 w-20 md:w-24 -translate-x-1/2 rounded-full bg-ink" }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute left-1/2 top-1 h-5 w-24 -translate-x-1/2 rounded-full bg-ink" }),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "h-[600px] md:h-[700px] overflow-y-auto overscroll-contain px-4 md:px-6 pb-6 md:pb-8 pt-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+						className: "h-[700px] overflow-y-auto overscroll-contain px-6 pb-8 pt-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
 						children
 					})
 				]
