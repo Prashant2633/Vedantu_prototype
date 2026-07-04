@@ -1,7 +1,7 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { _ as Bell, a as Sparkles, b as ArrowLeft, d as Info, f as House, g as Check, h as ChevronRight, i as Trash2, l as MessageCircle, m as Download, n as Wifi, o as Signal, p as FileText, r as User, s as ShieldCheck, t as X, u as Lock } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/prototype-CSWOM4pG.js
+//#region node_modules/.nitro/vite/services/ssr/assets/prototype-CiVpsdLm.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var PURPOSES = [
@@ -956,7 +956,7 @@ var NOTES = {
 	purposes: {
 		t: "9 purposes · none pre-selected beyond essentials.",
 		d: "Symmetry of choice is enforced. No dark patterns.",
-		pm: `Right now: ${optedIn} of 9 on.`
+		pm: "Symmetry of choice is enforced. Essential purposes are separated from optional features."
 	},
 	reviewOne: {
 		t: "Progressive disclosure.",

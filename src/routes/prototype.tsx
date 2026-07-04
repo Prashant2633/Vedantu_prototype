@@ -926,7 +926,7 @@ const NOTES: Record<Step, { t: string; d: string; pm: string }> = {
   purposes: {
     t: "9 purposes · none pre-selected beyond essentials.",
     d: "Symmetry of choice is enforced. No dark patterns.",
-    pm: `Right now: ${optedIn} of 9 on.`,
+    pm: "Symmetry of choice is enforced. Essential purposes are separated from optional features.",
   },
   reviewOne: {
     t: "Progressive disclosure.",
