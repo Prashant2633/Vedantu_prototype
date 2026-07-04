@@ -19,6 +19,7 @@ import {
   Trash2,
   User,
   Wifi,
+  X,
 } from "lucide-react";
 
 export const Route = createFileRoute("/prototype")({
@@ -154,6 +155,7 @@ function PrototypePage() {
     >,
   );
   const [reviewIdx, setReviewIdx] = useState(0);
+  const [isNotesOpen, setIsNotesOpen] = useState(false);
 
   const go = (s: Step) => {
     console.log("[PrototypePage] go() called, target step:", s);
@@ -203,9 +205,9 @@ function PrototypePage() {
 
   return (
     <div className="min-h-screen bg-[oklch(0.94_0.005_85)] text-ink">
-      <main className="mx-auto grid max-w-6xl grid-cols-12 gap-10 px-6 py-12">
+      <main className="mx-auto grid max-w-6xl grid-cols-12 md:gap-10 md:px-6 md:py-12 p-0 h-screen md:h-auto overflow-hidden md:overflow-visible">
         {/* Phone */}
-        <section className="col-span-12 md:col-span-8 md:col-start-2">
+        <section className="col-span-12 md:col-span-8 md:col-start-2 h-full md:h-auto w-full">
           <Phone>
             <Screen
               step={step}
@@ -220,11 +222,58 @@ function PrototypePage() {
           </Phone>
         </section>
 
-        {/* Right rail — narrator */}
-        <aside className="col-span-12 md:col-span-3">
+        {/* Right rail — narrator (Desktop only) */}
+        <aside className="hidden md:block col-span-12 md:col-span-3">
           <Narrator step={step} optedIn={optedIn} />
         </aside>
       </main>
+
+      {/* Floating Design Notes button on mobile */}
+      <button
+        onClick={() => setIsNotesOpen(true)}
+        className="md:hidden fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-ink px-4 py-3 text-xs font-semibold uppercase tracking-wider text-paper shadow-2xl transition-transform active:scale-[0.97]"
+      >
+        <Sparkles className="h-4 w-4 text-vermillion animate-pulse" />
+        <span>Design Notes</span>
+      </button>
+
+      {/* Mobile Design Notes Bottom Drawer */}
+      {isNotesOpen && (
+        <>
+          {/* Overlay */}
+          <div
+            onClick={() => setIsNotesOpen(false)}
+            className="md:hidden fixed inset-0 z-50 bg-ink/40 backdrop-blur-sm"
+          />
+          {/* Bottom Sheet */}
+          <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 rounded-t-3xl bg-paper p-6 shadow-[0_-10px_30px_rgba(0,0,0,0.15)] border-t border-hairline transition-all duration-300 ease-out">
+            <div className="flex items-center justify-between border-b border-hairline pb-4">
+              <div className="flex items-center gap-2">
+                <Sparkles className="h-4 w-4 text-vermillion" />
+                <span className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">Product Thinking Notes</span>
+              </div>
+              <button
+                onClick={() => setIsNotesOpen(false)}
+                className="rounded-full bg-muted p-1.5 hover:bg-muted/80"
+              >
+                <X className="h-4 w-4 text-ink" />
+              </button>
+            </div>
+            <div className="py-4">
+              <div className="font-display text-2xl leading-tight tracking-tight text-ink">
+                {NOTES[step].t}
+              </div>
+              <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">{NOTES[step].d}</p>
+              <div className="mt-4 rounded-xl border border-hairline bg-card p-4">
+                <div className="text-[10px] uppercase tracking-[0.18em] text-vermillion">
+                  PM note
+                </div>
+                <div className="mt-1.5 text-[12px] leading-snug">{NOTES[step].pm}</div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -232,11 +281,11 @@ function PrototypePage() {
 /* ---------------- Phone frame ---------------- */
 function Phone({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto w-[380px]">
-      <div className="relative rounded-[52px] border border-ink/20 bg-ink p-3 shadow-[0_50px_100px_-40px_rgba(24,24,40,0.5)]">
-        <div className="relative overflow-hidden rounded-[42px] bg-paper">
+    <div className="mx-auto w-full md:w-[380px] h-screen md:h-auto">
+      <div className="relative h-full md:h-auto md:rounded-[52px] md:border md:border-ink/20 md:bg-ink md:p-3 md:shadow-[0_50px_100px_-40px_rgba(24,24,40,0.5)]">
+        <div className="relative h-full overflow-hidden bg-paper md:rounded-[42px] flex flex-col">
           {/* Status bar */}
-          <div className="flex items-center justify-between px-6 pt-3 text-[11px] text-ink">
+          <div className="hidden md:flex items-center justify-between px-6 pt-3 text-[11px] text-ink">
             <span className="font-mono tabular-nums">9:41</span>
             <div className="flex items-center gap-1.5 text-ink/70">
               <Signal className="h-3 w-3" />
@@ -247,8 +296,8 @@ function Phone({ children }: { children: ReactNode }) {
             </div>
           </div>
           {/* Notch */}
-          <div className="absolute left-1/2 top-1 h-5 w-24 -translate-x-1/2 rounded-full bg-ink" />
-          <div className="h-[700px] overflow-y-auto overscroll-contain px-6 pb-8 pt-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">{children}</div>
+          <div className="hidden md:block absolute left-1/2 top-1 h-5 w-24 -translate-x-1/2 rounded-full bg-ink" />
+          <div className="flex-1 overflow-y-auto overscroll-contain px-6 pb-8 pt-6 md:h-[700px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">{children}</div>
         </div>
       </div>
     </div>
@@ -280,7 +329,7 @@ function Screen({
   switch (step) {
     case "splash":
       return (
-        <div className="flex min-h-[640px] flex-col items-center justify-between py-8">
+        <div className="flex min-h-0 md:min-h-[640px] flex-1 flex-col items-center justify-between py-8">
           <div />
           <div className="text-center">
             <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-ink text-paper">
@@ -592,7 +641,7 @@ function Screen({
 
     case "home":
       return (
-        <div className="min-h-[640px]">
+        <div className="min-h-0 md:min-h-[640px] flex flex-col justify-between h-full">
           <div className="flex items-center justify-between">
             <div>
               <div className="text-[12px] text-muted-foreground">Good evening,</div>
@@ -842,91 +891,93 @@ function Screen({
   }
 }
 
+/* ---------------- Narrator notes ---------------- */
+const NOTES: Record<Step, { t: string; d: string; pm: string }> = {
+  splash: {
+    t: "Signals trust in 4 seconds.",
+    d: "The tagline sets the emotional promise before a single field appears.",
+    pm: "No 'Skip' — but no wall either. The user still moves forward in one tap.",
+  },
+  age: {
+    t: "DPDP §9 begins here.",
+    d: "Age gate is short, honest, and states why we're asking.",
+    pm: "Under 18 branches. Adult flow keeps its own agency.",
+  },
+  askParent: {
+    t: "Handoff, not a wall.",
+    d: "The learner is not blocked — a parent is invited.",
+    pm: "Micro-copy admits fallibility: 'no parent nearby' is a valid exit.",
+  },
+  otp: {
+    t: "Standard, but scoped.",
+    d: "OTP is one signal — never the only signal.",
+    pm: "Timer + resend prevents lock-out anxiety.",
+  },
+  digilocker: {
+    t: "Three verification paths.",
+    d: "DigiLocker · payment match · video. Meets every income tier.",
+    pm: "We never store Aadhaar — only a yes/no token. This is the audit-friendly path.",
+  },
+  learnerCard: {
+    t: "Data minimisation, made visible.",
+    d: "Parent sees exactly what runs the classroom — nothing more.",
+    pm: "Retention window shown up-front, not buried.",
+  },
+  purposes: {
+    t: "9 purposes · none pre-selected beyond essentials.",
+    d: "Symmetry of choice is enforced. No dark patterns.",
+    pm: `Right now: ${optedIn} of 9 on.`,
+  },
+  reviewOne: {
+    t: "Progressive disclosure.",
+    d: "Every purpose has a 'why we ask' card — plain language, no jargon.",
+    pm: "Ships as a swipeable modal in production for one-thumb operation.",
+  },
+  receipt: {
+    t: "Consent as an artefact.",
+    d: "A signed, exportable receipt turns compliance into evidence of trust.",
+    pm: "Same object powers our audit log — one source of truth.",
+  },
+  home: {
+    t: "Trust surface, always visible.",
+    d: "A privacy tile on Home keeps consent alive, not out-of-sight.",
+    pm: "This tile is the entry point for withdrawal — where dark patterns usually hide.",
+  },
+  settings: {
+    t: "'Your data' is the first row.",
+    d: "Placement signals status, not shame.",
+    pm: "Above notifications, above profile — because DPDP §11 says so.",
+  },
+  manageData: {
+    t: "Every purpose is one tap to reverse.",
+    d: "Withdrawal is exactly as easy as giving consent. That's the DPDP §6(4) test.",
+    pm: "Export and delete live on the same screen — no scavenger hunt.",
+  },
+  exportRunning: {
+    t: "Async, but honest.",
+    d: "The user knows an email will arrive, and roughly when.",
+    pm: "SLA: 72h max under DPDP.",
+  },
+  exportDone: {
+    t: "Both formats, both audiences.",
+    d: "JSON for portability, PDF for humans. Signed for integrity.",
+    pm: "Link expires — reduces credential-stuffing blast radius.",
+  },
+  deleteConfirm: {
+    t: "Full transparency on what leaves.",
+    d: "And what stays — the 30-day audit copy — is disclosed.",
+    pm: "Two-column button layout so 'Keep' is never smaller than 'Delete'.",
+  },
+  deleteDone: {
+    t: "Right to erasure, honoured.",
+    d: "With a receipt, so the user can prove it later.",
+    pm: "Grace window (30d) protects against regretted deletes and legal holds.",
+  },
+};
+
 /* ---------------- Narrator ---------------- */
 function Narrator({ step, optedIn }: { step: Step; optedIn: number }) {
-  const notes: Record<Step, { t: string; d: string; pm: string }> = {
-    splash: {
-      t: "Signals trust in 4 seconds.",
-      d: "The tagline sets the emotional promise before a single field appears.",
-      pm: "No 'Skip' — but no wall either. The user still moves forward in one tap.",
-    },
-    age: {
-      t: "DPDP §9 begins here.",
-      d: "Age gate is short, honest, and states why we're asking.",
-      pm: "Under 18 branches. Adult flow keeps its own agency.",
-    },
-    askParent: {
-      t: "Handoff, not a wall.",
-      d: "The learner is not blocked — a parent is invited.",
-      pm: "Micro-copy admits fallibility: 'no parent nearby' is a valid exit.",
-    },
-    otp: {
-      t: "Standard, but scoped.",
-      d: "OTP is one signal — never the only signal.",
-      pm: "Timer + resend prevents lock-out anxiety.",
-    },
-    digilocker: {
-      t: "Three verification paths.",
-      d: "DigiLocker · payment match · video. Meets every income tier.",
-      pm: "We never store Aadhaar — only a yes/no token. This is the audit-friendly path.",
-    },
-    learnerCard: {
-      t: "Data minimisation, made visible.",
-      d: "Parent sees exactly what runs the classroom — nothing more.",
-      pm: "Retention window shown up-front, not buried.",
-    },
-    purposes: {
-      t: "9 purposes · none pre-selected beyond essentials.",
-      d: "Symmetry of choice is enforced. No dark patterns.",
-      pm: `Right now: ${optedIn} of 9 on.`,
-    },
-    reviewOne: {
-      t: "Progressive disclosure.",
-      d: "Every purpose has a 'why we ask' card — plain language, no jargon.",
-      pm: "Ships as a swipeable modal in production for one-thumb operation.",
-    },
-    receipt: {
-      t: "Consent as an artefact.",
-      d: "A signed, exportable receipt turns compliance into evidence of trust.",
-      pm: "Same object powers our audit log — one source of truth.",
-    },
-    home: {
-      t: "Trust surface, always visible.",
-      d: "A privacy tile on Home keeps consent alive, not out-of-sight.",
-      pm: "This tile is the entry point for withdrawal — where dark patterns usually hide.",
-    },
-    settings: {
-      t: "'Your data' is the first row.",
-      d: "Placement signals status, not shame.",
-      pm: "Above notifications, above profile — because DPDP §11 says so.",
-    },
-    manageData: {
-      t: "Every purpose is one tap to reverse.",
-      d: "Withdrawal is exactly as easy as giving consent. That's the DPDP §6(4) test.",
-      pm: "Export and delete live on the same screen — no scavenger hunt.",
-    },
-    exportRunning: {
-      t: "Async, but honest.",
-      d: "The user knows an email will arrive, and roughly when.",
-      pm: "SLA: 72h max under DPDP.",
-    },
-    exportDone: {
-      t: "Both formats, both audiences.",
-      d: "JSON for portability, PDF for humans. Signed for integrity.",
-      pm: "Link expires — reduces credential-stuffing blast radius.",
-    },
-    deleteConfirm: {
-      t: "Full transparency on what leaves.",
-      d: "And what stays — the 30-day audit copy — is disclosed.",
-      pm: "Two-column button layout so 'Keep' is never smaller than 'Delete'.",
-    },
-    deleteDone: {
-      t: "Right to erasure, honoured.",
-      d: "With a receipt, so the user can prove it later.",
-      pm: "Grace window (30d) protects against regretted deletes and legal holds.",
-    },
-  };
-  const n = notes[step];
+  const n = NOTES[step];
   return (
     <div className="sticky top-24">
       <div className="text-[10px] uppercase tracking-[0.22em] text-vermillion">
@@ -957,20 +1008,22 @@ function Frame({
   children: ReactNode;
 }) {
   return (
-    <div className="min-h-[640px]">
-      <div className="flex items-center justify-between">
-        <button
-          onClick={back}
-          className="flex h-9 w-9 items-center justify-center rounded-full bg-muted"
-        >
-          <ArrowLeft className="h-4 w-4" />
-        </button>
-        <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-          {title}
+    <div className="min-h-0 md:min-h-[640px] flex flex-col justify-between h-full">
+      <div>
+        <div className="flex items-center justify-between">
+          <button
+            onClick={back}
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-muted"
+          >
+            <ArrowLeft className="h-4 w-4" />
+          </button>
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+            {title}
+          </div>
+          <div className="h-9 w-9" />
         </div>
-        <div className="h-9 w-9" />
+        {children}
       </div>
-      {children}
     </div>
   );
 }
