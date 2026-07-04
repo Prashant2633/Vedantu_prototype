@@ -3,7 +3,7 @@ import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tan
 import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as YAxis, c as Line, d as Pie, f as Cell, i as LineChart, l as CartesianGrid, m as Tooltip, n as PieChart, o as XAxis, p as ResponsiveContainer, r as BarChart, s as Area, t as AreaChart, u as Bar } from "../_libs/recharts+[...].mjs";
 import { b as ArrowLeft, c as Printer, g as Check, h as ChevronRight, m as Download, t as X, v as ArrowUpRight, y as ArrowRight } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/deck-DAbVyuNu.js
+//#region node_modules/.nitro/vite/services/ssr/assets/deck-Chx719GO.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var SLIDES = [
@@ -66,6 +66,11 @@ var SLIDES = [
 		id: "risks",
 		label: "Risks & vision",
 		render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SlideRisks, {})
+	},
+	{
+		id: "thankyou",
+		label: "Thank you",
+		render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SlideThankYou, {})
 	}
 ];
 function Slide({ index, eyebrow, children, bg = "paper" }) {
@@ -1224,69 +1229,79 @@ function SlideDashboard() {
 						note: "% MAU · rollout weeks 1–8"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "mt-3 h-full min-h-[110px]",
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResponsiveContainer, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(AreaChart, {
-							data: trend,
-							margin: {
-								top: 5,
-								right: 10,
-								left: -20,
-								bottom: 0
-							},
-							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("defs", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("linearGradient", {
-									id: "v",
-									x1: "0",
-									x2: "0",
-									y1: "0",
-									y2: "1",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("stop", {
-										offset: "0%",
-										stopColor: "oklch(0.62 0.19 32)",
-										stopOpacity: .35
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("stop", {
-										offset: "100%",
-										stopColor: "oklch(0.62 0.19 32)",
-										stopOpacity: 0
-									})]
-								}) }),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CartesianGrid, {
-									strokeDasharray: "2 4",
-									stroke: "oklch(0.88 0.01 85)",
-									vertical: false
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(XAxis, {
-									dataKey: "w",
-									tick: { fontSize: 10 },
-									stroke: "var(--slate)"
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(YAxis, {
-									domain: [60, 100],
-									tick: { fontSize: 10 },
-									stroke: "var(--slate)"
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Tooltip, { contentStyle: {
-									background: "var(--ink)",
-									border: "none",
-									color: "var(--paper)",
-									fontSize: 11,
-									borderRadius: 8
-								} }),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Area, {
-									type: "monotone",
-									dataKey: "target",
-									stroke: "var(--slate)",
-									strokeDasharray: "4 4",
-									fill: "transparent"
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Area, {
-									type: "monotone",
-									dataKey: "vcc",
-									stroke: "var(--vermillion)",
-									strokeWidth: 2,
-									fill: "url(#v)"
-								})
-							]
-						}) })
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResponsiveContainer, {
+							width: "100%",
+							height: 110,
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(AreaChart, {
+								data: trend,
+								margin: {
+									top: 5,
+									right: 10,
+									left: -20,
+									bottom: 0
+								},
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("defs", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("linearGradient", {
+										id: "v",
+										x1: "0",
+										x2: "0",
+										y1: "0",
+										y2: "1",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("stop", {
+											offset: "0%",
+											stopColor: "oklch(0.62 0.19 32)",
+											stopOpacity: .35
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("stop", {
+											offset: "100%",
+											stopColor: "oklch(0.62 0.19 32)",
+											stopOpacity: 0
+										})]
+									}) }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CartesianGrid, {
+										strokeDasharray: "2 4",
+										stroke: "oklch(0.88 0.01 85)",
+										vertical: false
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(XAxis, {
+										dataKey: "w",
+										tick: { fontSize: 10 },
+										stroke: "var(--slate)"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(YAxis, {
+										domain: [60, 100],
+										tick: { fontSize: 10 },
+										stroke: "var(--slate)"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Tooltip, {
+										contentStyle: {
+											background: "var(--ink)",
+											border: "none",
+											color: "var(--paper)",
+											fontSize: 11,
+											borderRadius: 8
+										},
+										itemStyle: { color: "var(--paper)" },
+										labelStyle: { color: "var(--paper)" }
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Area, {
+										type: "monotone",
+										dataKey: "target",
+										stroke: "var(--slate)",
+										strokeDasharray: "4 4",
+										fill: "transparent",
+										isAnimationActive: false
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Area, {
+										type: "monotone",
+										dataKey: "vcc",
+										stroke: "var(--vermillion)",
+										strokeWidth: 2,
+										fill: "url(#v)",
+										isAnimationActive: false
+									})
+								]
+							})
+						})
 					})]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -1324,40 +1339,45 @@ function SlideDashboard() {
 						note: "% of eligible users"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "mt-2 h-full min-h-[110px]",
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResponsiveContainer, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(BarChart, {
-							data: purposes,
-							layout: "vertical",
-							margin: {
-								top: 0,
-								right: 10,
-								left: 10,
-								bottom: 0
-							},
-							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(XAxis, {
-									type: "number",
-									domain: [0, 100],
-									hide: true
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(YAxis, {
-									type: "category",
-									dataKey: "p",
-									tick: { fontSize: 10 },
-									width: 70,
-									stroke: "var(--slate)"
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bar, {
-									dataKey: "on",
-									fill: "var(--vermillion)",
-									radius: [
-										0,
-										4,
-										4,
-										0
-									]
-								})
-							]
-						}) })
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResponsiveContainer, {
+							width: "100%",
+							height: 110,
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(BarChart, {
+								data: purposes,
+								layout: "vertical",
+								margin: {
+									top: 0,
+									right: 10,
+									left: 10,
+									bottom: 0
+								},
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(XAxis, {
+										type: "number",
+										domain: [0, 100],
+										hide: true
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(YAxis, {
+										type: "category",
+										dataKey: "p",
+										tick: { fontSize: 10 },
+										width: 70,
+										stroke: "var(--slate)"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bar, {
+										dataKey: "on",
+										fill: "var(--vermillion)",
+										radius: [
+											0,
+											4,
+											4,
+											0
+										],
+										isAnimationActive: false
+									})
+								]
+							})
+						})
 					})]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -1367,20 +1387,29 @@ function SlideDashboard() {
 						note: "active users w/ valid consent"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "mt-2 flex h-full min-h-[110px] items-center",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResponsiveContainer, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(PieChart, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Pie, {
-							data: segments,
-							dataKey: "value",
-							innerRadius: 40,
-							outerRadius: 65,
-							paddingAngle: 2,
-							children: segments.map((_, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Cell, { fill: COLORS[i] }, i))
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Tooltip, { contentStyle: {
-							background: "var(--ink)",
-							border: "none",
-							color: "var(--paper)",
-							fontSize: 11,
-							borderRadius: 8
-						} })] }) }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResponsiveContainer, {
+							width: "100%",
+							height: 110,
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(PieChart, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Pie, {
+								data: segments,
+								dataKey: "value",
+								innerRadius: 40,
+								outerRadius: 65,
+								paddingAngle: 2,
+								isAnimationActive: false,
+								children: segments.map((_, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Cell, { fill: COLORS[i] }, i))
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Tooltip, {
+								contentStyle: {
+									background: "var(--ink)",
+									border: "none",
+									color: "var(--paper)",
+									fontSize: 11,
+									borderRadius: 8
+								},
+								itemStyle: { color: "var(--paper)" },
+								labelStyle: { color: "var(--paper)" }
+							})] })
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 							className: "ml-2 space-y-1 text-[11px]",
 							children: segments.map((s, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "flex items-center gap-2",
@@ -1409,63 +1438,72 @@ function SlideDashboard() {
 						note: "rolling 14d · per 10k MAU"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "mt-2 h-full min-h-[110px]",
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResponsiveContainer, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(LineChart, {
-							data: Array.from({ length: 14 }, (_, i) => ({
-								d: i + 1,
-								v: [
-									22,
-									20,
-									19,
-									24,
-									21,
-									18,
-									20,
-									23,
-									26,
-									29,
-									34,
-									31,
-									30,
-									33
-								][i]
-							})),
-							margin: {
-								top: 5,
-								right: 5,
-								left: -25,
-								bottom: 0
-							},
-							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CartesianGrid, {
-									strokeDasharray: "2 4",
-									stroke: "oklch(0.88 0.01 85)",
-									vertical: false
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(XAxis, {
-									dataKey: "d",
-									tick: { fontSize: 10 },
-									stroke: "var(--slate)"
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(YAxis, {
-									tick: { fontSize: 10 },
-									stroke: "var(--slate)"
-								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Tooltip, { contentStyle: {
-									background: "var(--ink)",
-									border: "none",
-									color: "var(--paper)",
-									fontSize: 11,
-									borderRadius: 8
-								} }),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Line, {
-									type: "monotone",
-									dataKey: "v",
-									stroke: "var(--vermillion)",
-									strokeWidth: 2,
-									dot: false
-								})
-							]
-						}) })
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResponsiveContainer, {
+							width: "100%",
+							height: 110,
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(LineChart, {
+								data: Array.from({ length: 14 }, (_, i) => ({
+									d: i + 1,
+									v: [
+										22,
+										20,
+										19,
+										24,
+										21,
+										18,
+										20,
+										23,
+										26,
+										29,
+										34,
+										31,
+										30,
+										33
+									][i]
+								})),
+								margin: {
+									top: 5,
+									right: 5,
+									left: -25,
+									bottom: 0
+								},
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CartesianGrid, {
+										strokeDasharray: "2 4",
+										stroke: "oklch(0.88 0.01 85)",
+										vertical: false
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(XAxis, {
+										dataKey: "d",
+										tick: { fontSize: 10 },
+										stroke: "var(--slate)"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(YAxis, {
+										tick: { fontSize: 10 },
+										stroke: "var(--slate)"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Tooltip, {
+										contentStyle: {
+											background: "var(--ink)",
+											border: "none",
+											color: "var(--paper)",
+											fontSize: 11,
+											borderRadius: 8
+										},
+										itemStyle: { color: "var(--paper)" },
+										labelStyle: { color: "var(--paper)" }
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Line, {
+										type: "monotone",
+										dataKey: "v",
+										stroke: "var(--vermillion)",
+										strokeWidth: 2,
+										dot: false,
+										isAnimationActive: false
+									})
+								]
+							})
+						})
 					})]
 				})
 			]
@@ -1920,6 +1958,50 @@ function SlideRisks() {
 		})
 	});
 }
+function SlideThankYou() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "slide-frame flex flex-col justify-between px-16 py-14",
+		style: {
+			background: "var(--paper)",
+			color: "var(--ink)"
+		},
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-muted-foreground",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center gap-3",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "inline-block h-1.5 w-1.5 rounded-full bg-vermillion" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Vedantu · Case Study & Redesign" })]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "July 2026" })]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "my-auto text-center",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
+					className: "font-display text-[96px] leading-none tracking-tight text-ink",
+					children: ["Thank ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("em", {
+						className: "italic text-vermillion",
+						children: "you."
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "mx-auto mt-6 max-w-lg text-[16px] leading-relaxed text-slate",
+					children: "Reimagining consent compliance as a product feature that builds trust, reduces churn, and honors user rights."
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex items-center justify-between border-t border-hairline pt-6 text-[11px] uppercase tracking-[0.22em] text-muted-foreground",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex flex-col gap-1 text-left normal-case",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-[11px] font-semibold tracking-[0.18em] uppercase text-ink",
+						children: "Made by Prashant Sharma"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-[10px] text-muted-foreground",
+						children: "prashant19419@gmail.com"
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "End of Presentation" })]
+			})
+		]
+	});
+}
 function DeckPage() {
 	const [i, setI] = (0, import_react.useState)(0);
 	const [printing, setPrinting] = (0, import_react.useState)(false);
@@ -1944,6 +2026,20 @@ function DeckPage() {
 		compute();
 		window.addEventListener("resize", compute);
 		return () => window.removeEventListener("resize", compute);
+	}, []);
+	(0, import_react.useEffect)(() => {
+		const handleBeforePrint = () => {
+			setPrinting(true);
+		};
+		const handleAfterPrint = () => {
+			setPrinting(false);
+		};
+		window.addEventListener("beforeprint", handleBeforePrint);
+		window.addEventListener("afterprint", handleAfterPrint);
+		return () => {
+			window.removeEventListener("beforeprint", handleBeforePrint);
+			window.removeEventListener("afterprint", handleAfterPrint);
+		};
 	}, []);
 	if (printing) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "bg-white",
@@ -1984,8 +2080,7 @@ function DeckPage() {
 								setPrinting(true);
 								setTimeout(() => {
 									window.print();
-									setPrinting(false);
-								}, 200);
+								}, 150);
 							},
 							className: "inline-flex items-center gap-1.5 rounded-md border border-hairline bg-background px-3 py-1.5 text-xs hover:bg-muted",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Printer, { className: "h-3.5 w-3.5" }), " Print / PDF"]

@@ -58,6 +58,7 @@ const SLIDES: { id: string; label: string; render: () => ReactNode }[] = [
   { id: "diagnostic", label: "Diagnostic", render: () => <SlideDiagnostic /> },
   { id: "rollout", label: "Rollout", render: () => <SlideRollout /> },
   { id: "risks", label: "Risks & vision", render: () => <SlideRisks /> },
+  { id: "thankyou", label: "Thank you", render: () => <SlideThankYou /> },
 ];
 
 /* Shared slide chrome */
@@ -981,7 +982,7 @@ function SlideDashboard() {
         <div className="col-span-7 rounded-xl border border-hairline bg-card p-4">
           <ChartHead k="VCC — weekly trend" note="% MAU · rollout weeks 1–8" />
           <div className="mt-3 h-full min-h-[110px]">
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height={110}>
               <AreaChart data={trend} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
                 <defs>
                   <linearGradient id="v" x1="0" x2="0" y1="0" y2="1">
@@ -1000,9 +1001,11 @@ function SlideDashboard() {
                     fontSize: 11,
                     borderRadius: 8,
                   }}
+                  itemStyle={{ color: "var(--paper)" }}
+                  labelStyle={{ color: "var(--paper)" }}
                 />
-                <Area type="monotone" dataKey="target" stroke="var(--slate)" strokeDasharray="4 4" fill="transparent" />
-                <Area type="monotone" dataKey="vcc" stroke="var(--vermillion)" strokeWidth={2} fill="url(#v)" />
+                <Area type="monotone" dataKey="target" stroke="var(--slate)" strokeDasharray="4 4" fill="transparent" isAnimationActive={false} />
+                <Area type="monotone" dataKey="vcc" stroke="var(--vermillion)" strokeWidth={2} fill="url(#v)" isAnimationActive={false} />
               </AreaChart>
             </ResponsiveContainer>
           </div>
@@ -1039,11 +1042,11 @@ function SlideDashboard() {
         <div className="col-span-4 rounded-xl border border-hairline bg-card p-4">
           <ChartHead k="Purpose opt-in mix" note="% of eligible users" />
           <div className="mt-2 h-full min-h-[110px]">
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height={110}>
               <BarChart data={purposes} layout="vertical" margin={{ top: 0, right: 10, left: 10, bottom: 0 }}>
                 <XAxis type="number" domain={[0, 100]} hide />
                 <YAxis type="category" dataKey="p" tick={{ fontSize: 10 }} width={70} stroke="var(--slate)" />
-                <Bar dataKey="on" fill="var(--vermillion)" radius={[0, 4, 4, 0]} />
+                <Bar dataKey="on" fill="var(--vermillion)" radius={[0, 4, 4, 0]} isAnimationActive={false} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -1051,15 +1054,17 @@ function SlideDashboard() {
         <div className="col-span-4 rounded-xl border border-hairline bg-card p-4">
           <ChartHead k="Platform split" note="active users w/ valid consent" />
           <div className="mt-2 flex h-full min-h-[110px] items-center">
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height={110}>
               <PieChart>
-                <Pie data={segments} dataKey="value" innerRadius={40} outerRadius={65} paddingAngle={2}>
+                <Pie data={segments} dataKey="value" innerRadius={40} outerRadius={65} paddingAngle={2} isAnimationActive={false}>
                   {segments.map((_, i) => (
                     <Cell key={i} fill={COLORS[i]} />
                   ))}
                 </Pie>
                 <Tooltip
                   contentStyle={{ background: "var(--ink)", border: "none", color: "var(--paper)", fontSize: 11, borderRadius: 8 }}
+                  itemStyle={{ color: "var(--paper)" }}
+                  labelStyle={{ color: "var(--paper)" }}
                 />
               </PieChart>
             </ResponsiveContainer>
@@ -1077,7 +1082,7 @@ function SlideDashboard() {
         <div className="col-span-4 rounded-xl border border-hairline bg-card p-4">
           <ChartHead k="Withdrawals · daily" note="rolling 14d · per 10k MAU" />
           <div className="mt-2 h-full min-h-[110px]">
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height={110}>
               <LineChart
                 data={Array.from({ length: 14 }, (_, i) => ({
                   d: i + 1,
@@ -1088,8 +1093,12 @@ function SlideDashboard() {
                 <CartesianGrid strokeDasharray="2 4" stroke="oklch(0.88 0.01 85)" vertical={false} />
                 <XAxis dataKey="d" tick={{ fontSize: 10 }} stroke="var(--slate)" />
                 <YAxis tick={{ fontSize: 10 }} stroke="var(--slate)" />
-                <Tooltip contentStyle={{ background: "var(--ink)", border: "none", color: "var(--paper)", fontSize: 11, borderRadius: 8 }} />
-                <Line type="monotone" dataKey="v" stroke="var(--vermillion)" strokeWidth={2} dot={false} />
+                <Tooltip
+                  contentStyle={{ background: "var(--ink)", border: "none", color: "var(--paper)", fontSize: 11, borderRadius: 8 }}
+                  itemStyle={{ color: "var(--paper)" }}
+                  labelStyle={{ color: "var(--paper)" }}
+                />
+                <Line type="monotone" dataKey="v" stroke="var(--vermillion)" strokeWidth={2} dot={false} isAnimationActive={false} />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -1470,6 +1479,41 @@ function SlideRisks() {
   );
 }
 
+/* --- 13. Thank You ------------------------------------------------ */
+function SlideThankYou() {
+  return (
+    <div
+      className="slide-frame flex flex-col justify-between px-16 py-14"
+      style={{ background: "var(--paper)", color: "var(--ink)" }}
+    >
+      <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+        <div className="flex items-center gap-3">
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-vermillion" />
+          <span>Vedantu · Case Study & Redesign</span>
+        </div>
+        <span>July 2026</span>
+      </div>
+
+      <div className="my-auto text-center">
+        <h1 className="font-display text-[96px] leading-none tracking-tight text-ink">
+          Thank <em className="italic text-vermillion">you.</em>
+        </h1>
+        <p className="mx-auto mt-6 max-w-lg text-[16px] leading-relaxed text-slate">
+          Reimagining consent compliance as a product feature that builds trust, reduces churn, and honors user rights.
+        </p>
+      </div>
+
+      <div className="flex items-center justify-between border-t border-hairline pt-6 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+        <div className="flex flex-col gap-1 text-left normal-case">
+          <span className="text-[11px] font-semibold tracking-[0.18em] uppercase text-ink">Made by Prashant Sharma</span>
+          <span className="text-[10px] text-muted-foreground">prashant19419@gmail.com</span>
+        </div>
+        <span>End of Presentation</span>
+      </div>
+    </div>
+  );
+}
+
 /* ------------------------------------------------------------------ */
 /*  Deck shell                                                        */
 /* ------------------------------------------------------------------ */
@@ -1503,6 +1547,22 @@ function DeckPage() {
     compute();
     window.addEventListener("resize", compute);
     return () => window.removeEventListener("resize", compute);
+  }, []);
+
+  // Listen to browser print lifecycle events to keep slides rendered until PDF capture finishes
+  useEffect(() => {
+    const handleBeforePrint = () => {
+      setPrinting(true);
+    };
+    const handleAfterPrint = () => {
+      setPrinting(false);
+    };
+    window.addEventListener("beforeprint", handleBeforePrint);
+    window.addEventListener("afterprint", handleAfterPrint);
+    return () => {
+      window.removeEventListener("beforeprint", handleBeforePrint);
+      window.removeEventListener("afterprint", handleAfterPrint);
+    };
   }, []);
 
   if (printing) {
@@ -1541,8 +1601,7 @@ function DeckPage() {
               setPrinting(true);
               setTimeout(() => {
                 window.print();
-                setPrinting(false);
-              }, 200);
+              }, 150);
             }}
             className="inline-flex items-center gap-1.5 rounded-md border border-hairline bg-background px-3 py-1.5 text-xs hover:bg-muted"
           >
