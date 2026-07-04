@@ -3,7 +3,7 @@ import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tan
 import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as YAxis, c as Line, d as Pie, f as Cell, i as LineChart, l as CartesianGrid, m as Tooltip, n as PieChart, o as XAxis, p as ResponsiveContainer, r as BarChart, s as Area, t as AreaChart, u as Bar } from "../_libs/recharts+[...].mjs";
 import { b as ArrowLeft, c as Printer, g as Check, h as ChevronRight, m as Download, t as X, v as ArrowUpRight, y as ArrowRight } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/deck-C7GWFJVm.js
+//#region node_modules/.nitro/vite/services/ssr/assets/deck-DzJDUaiP.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var SLIDES = [
@@ -105,11 +105,6 @@ function Slide({ index, eyebrow, children, bg = "paper" }) {
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "absolute inset-x-16 top-24 bottom-14",
 				children
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "absolute inset-x-16 bottom-6 flex items-center justify-between text-[10px] uppercase tracking-[0.22em]",
-				style: { color: isInk ? "oklch(0.6 0.02 260)" : "var(--muted-foreground)" },
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Consent, by design" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Mock data · assumptions disclosed" })]
 			})
 		]
 	});

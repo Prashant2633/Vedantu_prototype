@@ -105,13 +105,6 @@ function Slide({
         style={{ background: isInk ? "oklch(1 0 0 / 0.12)" : "var(--hairline)" }}
       />
       <div className="absolute inset-x-16 top-24 bottom-14">{children}</div>
-      <div
-        className="absolute inset-x-16 bottom-6 flex items-center justify-between text-[10px] uppercase tracking-[0.22em]"
-        style={{ color: isInk ? "oklch(0.6 0.02 260)" : "var(--muted-foreground)" }}
-      >
-        <span>Consent, by design</span>
-        <span>Mock data · assumptions disclosed</span>
-      </div>
     </div>
   );
 }
