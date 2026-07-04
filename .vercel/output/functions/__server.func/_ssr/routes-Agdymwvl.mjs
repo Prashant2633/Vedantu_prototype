@@ -1,7 +1,7 @@
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { v as ArrowUpRight } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-Cx5ycbDh.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-Agdymwvl.js
 var import_jsx_runtime = require_jsx_runtime();
 function Landing() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -12,7 +12,7 @@ function Landing() {
 				className: "flex items-center gap-2",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "inline-block h-2 w-2 rounded-full bg-vermillion" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 					className: "text-xs uppercase tracking-[0.18em] text-muted-foreground",
-					children: "PM Intern Submission · Vedantu"
+					children: "Case Study & Redesign · Vedantu"
 				})]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "text-xs uppercase tracking-[0.18em] text-muted-foreground",
@@ -77,7 +77,7 @@ function Landing() {
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("footer", {
 					className: "mt-24 flex items-center justify-between border-t border-hairline pt-6 text-xs uppercase tracking-[0.18em] text-muted-foreground",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Built for the Vedantu PM Intern hiring assignment" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Assumptions & mock data disclosed inside" })]
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Vedantu India DPDP Onboarding & Consent Redesign" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Assumptions & mock data disclosed inside" })]
 				})
 			]
 		})]

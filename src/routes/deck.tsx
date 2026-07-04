@@ -94,7 +94,7 @@ function Slide({
           <span>{eyebrow}</span>
         </div>
         <div className="flex items-center gap-8">
-          <span>Vedantu · DPDP · PM Intern</span>
+          <span>Vedantu · DPDP · Case Study</span>
           <span className="tabular-nums">
             {String(index + 1).padStart(2, "0")} / {String(SLIDES.length).padStart(2, "0")}
           </span>
@@ -119,7 +119,7 @@ function SlideCover() {
       <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-white/60">
         <div className="flex items-center gap-3">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-vermillion" />
-          <span>Vedantu · Product Intern hiring assignment</span>
+          <span>Vedantu · Case Study & Redesign</span>
         </div>
         <span>July 2026</span>
       </div>

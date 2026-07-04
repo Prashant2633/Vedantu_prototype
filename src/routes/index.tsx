@@ -18,7 +18,7 @@ function Landing() {
         <div className="flex items-center gap-2">
           <span className="inline-block h-2 w-2 rounded-full bg-vermillion" />
           <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-            PM Intern Submission · Vedantu
+            Case Study & Redesign · Vedantu
           </span>
         </div>
         <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
@@ -65,7 +65,7 @@ function Landing() {
         </section>
 
         <footer className="mt-24 flex items-center justify-between border-t border-hairline pt-6 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-          <span>Built for the Vedantu PM Intern hiring assignment</span>
+          <span>Vedantu India DPDP Onboarding & Consent Redesign</span>
           <span>Assumptions & mock data disclosed inside</span>
         </footer>
       </main>

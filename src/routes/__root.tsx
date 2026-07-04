@@ -83,7 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "A product-thinking case study reimagining Vedantu's consent and children's data experience under India's DPDP Act.",
       },
-      { name: "author", content: "PM Intern Submission" },
+      { name: "author", content: "Vedantu Case Study & Redesign" },
       { property: "og:title", content: "Consent, by design — Vedantu × DPDP" },
       {
         property: "og:description",

@@ -1,4 +1,4 @@
-# Spotify India DPDP 2023 Onboarding & Consent Dashboard
+# Vedantu India DPDP 2023 Onboarding & Consent Dashboard
 
 [![React](https://img.shields.io/badge/React-19.2.0-blue.svg)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-8.0.16-purple.svg)](https://vite.dev)
@@ -6,18 +6,18 @@
 [![TanStack Router](https://img.shields.io/badge/TanStack_Router-1.170.16-FF4154.svg)](https://tanstack.com/router)
 [![DPDP Act 2023](https://img.shields.io/badge/DPDP_Act-Section_9_Child_Consent-green.svg)](https://www.meity.gov.in)
 
-This repository contains the Product Management case study submission for the **Vedantu Product Management Intern Hiring Assignment**. 
+This repository contains the Product Management case study and implementation dashboard for the **Vedantu India DPDP 2023 Onboarding & Consent Dashboard**.
 
-It details the strategy and implementation of a compliance-safe, friction-lite onboarding flow for **Spotify India** to align with India’s Digital Personal Data Protection (DPDP) Act, 2023—focusing on the **Under-18 Consent Paradox**.
+It details the strategy and implementation of a compliance-safe, friction-lite onboarding flow for **Vedantu India** to align with India’s Digital Personal Data Protection (DPDP) Act, 2023—focusing on the **Under-18 Consent Paradox**.
 
 ---
 
 ## 1. The Core PM Problem: The Under-18 Consent Paradox
 
 - **The Law (Section 9)**: India's DPDP Act defines any individual under 18 as a child. Data fiduciaries must obtain **Verifiable Parental Consent (VPC)** before processing children's data and are strictly prohibited from **behavioral tracking, profiling, or targeted advertising** directed at children.
-- **The Business Challenge**: Teenagers (13-17) represent a major growth engine for Spotify India. Forcing a hard, blocking parental authentication gate during signup will trigger a **70-80% signup drop-off**.
-- **The Personalization Lock**: Spotify's primary value proposition relies on personalized playlists (Discover Weekly, Daily Mixes) built on behavioral logs. 
-- **The Solution**: This project implements **Compliant Lite Mode** (zero-tracking, contextual personalization, and contextual ads) to let teens stream immediately, coupled with a **Progressive VPC Flow** (Rs. 1 UPI verification or SMS OTP link sent to parents) to unlock full customization seamlessly within a 7-day grace period.
+- **The Business Challenge**: Teenagers (13-17) represent a major growth engine for Vedantu India. Forcing a hard, blocking parental authentication gate during signup will trigger a **70-80% signup drop-off**.
+- **The Personalization Lock**: Vedantu's primary value proposition relies on personalized course curriculum, study schedules, and progress tracking built on student behavioral logs.
+- **The Solution**: This project implements **Compliant Lite Mode** (zero-tracking, contextual course recommendations, and contextual student notifications) to let teens learn immediately, coupled with a **Progressive VPC Flow** (Rs. 1 UPI verification or SMS OTP link sent to parents) to unlock full customization seamlessly within a 7-day grace period.
 
 ---
 
@@ -43,7 +43,7 @@ This project is structured as a unified presentation and sandbox system:
 - **Age Detection Gate**: Automatically routes users based on Date of Birth inputs.
 - **Compliant Lite Mode**: Disables behavioral recommendation logs, serving contextual-only playlists and contextual ad placements.
 - **WhatsApp/SMS Link Portal**: Lets teens invite their parent to approve consent.
-- **Multilingual Parent Consent Portal**: Displays clear, jargon-free legal notices in English and **हिन्दी (Hindi)**.
+- **Parent Consent Portal**: Displays clear, jargon-free legal notices in English and **हिन्दी (Hindi)**.
 - **KYC-backed Adulthood Verification**: Simulates a ₹1 refundable UPI payment (GPay/PhonePe) to verify parent adulthood through banking KYC.
 - **Granular Settings Preference Center**: Prominently shows individual toggles for personalization, location, and social broadcasting, enabling easy consent withdrawal.
 - **Rights Portability & Erasure**: Implements 1-click Download Data (Access) and Account Deletion (Erasure/Right to be Forgotten) popups.
@@ -81,7 +81,7 @@ npm install
 # Runs the Vite local server
 npm run dev
 ```
-Open your browser and navigate to the address shown in the terminal (typically **`http://localhost:5173`**).
+Open your browser and navigate to the address shown in the terminal (typically **`http://localhost:3000`**).
 
 ### 3. Build & Compile for Production
 ```bash
