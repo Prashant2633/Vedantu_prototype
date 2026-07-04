@@ -204,7 +204,7 @@ function PrototypePage() {
 
   return (
     <div className="min-h-screen bg-[oklch(0.94_0.005_85)] text-ink">
-      <main className="mx-auto grid max-w-6xl grid-cols-12 gap-10 px-6 py-12">
+      <main className="mx-auto grid max-w-6xl grid-cols-12 gap-6 md:gap-10 px-3 py-6 md:px-6 md:py-12">
         {/* Phone */}
         <section className="col-span-12 md:col-span-8 md:col-start-2">
           <Phone>
@@ -250,7 +250,7 @@ function Phone({ children }: { children: ReactNode }) {
           {/* Notch */}
           <div className="absolute left-1/2 top-1 h-4 md:h-5 w-20 md:w-24 -translate-x-1/2 rounded-full bg-ink" />
           {/* Scrollable children container */}
-          <div className="h-[520px] md:h-[700px] overflow-y-auto overscroll-contain px-4 md:px-6 pb-6 md:pb-8 pt-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="h-[600px] md:h-[700px] overflow-y-auto overscroll-contain px-4 md:px-6 pb-6 md:pb-8 pt-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {children}
           </div>
         </div>
