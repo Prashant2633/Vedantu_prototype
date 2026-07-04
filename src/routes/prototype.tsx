@@ -233,7 +233,7 @@ function PrototypePage() {
 /* ---------------- Phone frame ---------------- */
 function Phone({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto w-[92vw] max-w-[380px]">
+    <div className="mx-auto w-full max-w-[380px]">
       <div className="relative rounded-[40px] md:rounded-[52px] border border-ink/20 bg-ink p-2 md:p-3 shadow-[0_30px_60px_-15px_rgba(24,24,40,0.3)]">
         <div className="relative overflow-hidden rounded-[32px] md:rounded-[42px] bg-paper">
           {/* Status bar */}

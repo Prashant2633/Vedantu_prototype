@@ -1,7 +1,7 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { _ as Bell, a as Sparkles, b as ArrowLeft, d as Info, f as House, g as Check, h as ChevronRight, i as Trash2, l as MessageCircle, m as Download, n as Wifi, o as Signal, p as FileText, r as User, s as ShieldCheck, u as Lock } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/prototype-C5bX682X.js
+//#region node_modules/.nitro/vite/services/ssr/assets/prototype-BboADH-h.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var PURPOSES = [
@@ -128,7 +128,7 @@ function PrototypePage() {
 }
 function Phone({ children }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "mx-auto w-[92vw] max-w-[380px]",
+		className: "mx-auto w-full max-w-[380px]",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 			className: "relative rounded-[40px] md:rounded-[52px] border border-ink/20 bg-ink p-2 md:p-3 shadow-[0_30px_60px_-15px_rgba(24,24,40,0.3)]",
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
