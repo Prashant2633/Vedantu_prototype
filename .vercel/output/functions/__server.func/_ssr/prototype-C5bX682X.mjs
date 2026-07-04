@@ -1,7 +1,7 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
-import { _ as Bell, a as Sparkles, b as ArrowLeft, d as Info, f as House, g as Check, h as ChevronRight, i as Trash2, l as MessageCircle, m as Download, n as Wifi, o as Signal, p as FileText, r as User, s as ShieldCheck, t as X, u as Lock } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/prototype-CiVpsdLm.js
+import { _ as Bell, a as Sparkles, b as ArrowLeft, d as Info, f as House, g as Check, h as ChevronRight, i as Trash2, l as MessageCircle, m as Download, n as Wifi, o as Signal, p as FileText, r as User, s as ShieldCheck, u as Lock } from "../_libs/lucide-react.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/prototype-C5bX682X.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var PURPOSES = [
@@ -88,7 +88,6 @@ function PrototypePage() {
 	const [history, setHistory] = (0, import_react.useState)([]);
 	const [purposes, setPurposes] = (0, import_react.useState)(Object.fromEntries(PURPOSES.map((p) => [p.id, p.defaultOn])));
 	const [reviewIdx, setReviewIdx] = (0, import_react.useState)(0);
-	const [isNotesOpen, setIsNotesOpen] = (0, import_react.useState)(false);
 	const go = (s) => {
 		console.log("[PrototypePage] go() called, target step:", s);
 		setHistory((h) => [...h, step]);
@@ -101,91 +100,42 @@ function PrototypePage() {
 		setStep(prev);
 	};
 	const optedIn = (0, import_react.useMemo)(() => Object.values(purposes).filter(Boolean).length, [purposes]);
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "min-h-screen bg-[oklch(0.94_0.005_85)] text-ink",
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
-				className: "mx-auto grid max-w-6xl grid-cols-12 md:gap-10 md:px-6 md:py-12 p-0 h-screen md:h-auto overflow-hidden md:overflow-visible",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-					className: "col-span-12 md:col-span-8 md:col-start-2 h-full md:h-auto w-full",
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Screen, {
-						step,
-						go,
-						back,
-						purposes,
-						setPurposes,
-						reviewIdx,
-						setReviewIdx,
-						optedIn
-					}) })
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("aside", {
-					className: "hidden md:block col-span-12 md:col-span-3",
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Narrator, {
-						step,
-						optedIn
-					})
-				})]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-				onClick: () => setIsNotesOpen(true),
-				className: "md:hidden fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-ink px-4 py-3 text-xs font-semibold uppercase tracking-wider text-paper shadow-2xl transition-transform active:scale-[0.97]",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sparkles, { className: "h-4 w-4 text-vermillion animate-pulse" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Design Notes" })]
-			}),
-			isNotesOpen && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				onClick: () => setIsNotesOpen(false),
-				className: "md:hidden fixed inset-0 z-50 bg-ink/40 backdrop-blur-sm"
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "md:hidden fixed bottom-0 left-0 right-0 z-50 rounded-t-3xl bg-paper p-6 shadow-[0_-10px_30px_rgba(0,0,0,0.15)] border-t border-hairline transition-all duration-300 ease-out",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex items-center justify-between border-b border-hairline pb-4",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex items-center gap-2",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sparkles, { className: "h-4 w-4 text-vermillion" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-[11px] uppercase tracking-[0.22em] text-muted-foreground",
-							children: "Product Thinking Notes"
-						})]
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-						onClick: () => setIsNotesOpen(false),
-						className: "rounded-full bg-muted p-1.5 hover:bg-muted/80",
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "h-4 w-4 text-ink" })
-					})]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "py-4",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "font-display text-2xl leading-tight tracking-tight text-ink",
-							children: NOTES[step].t
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "mt-3 text-[13px] leading-relaxed text-muted-foreground",
-							children: NOTES[step].d
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "mt-4 rounded-xl border border-hairline bg-card p-4",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "text-[10px] uppercase tracking-[0.18em] text-vermillion",
-								children: "PM note"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "mt-1.5 text-[12px] leading-snug",
-								children: NOTES[step].pm
-							})]
-						})
-					]
-				})]
-			})] })
-		]
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
+			className: "mx-auto grid max-w-6xl grid-cols-12 gap-10 px-6 py-12",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+				className: "col-span-12 md:col-span-8 md:col-start-2",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Screen, {
+					step,
+					go,
+					back,
+					purposes,
+					setPurposes,
+					reviewIdx,
+					setReviewIdx,
+					optedIn
+				}) })
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("aside", {
+				className: "col-span-12 md:col-span-3",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Narrator, {
+					step,
+					optedIn
+				})
+			})]
+		})
 	});
 }
 function Phone({ children }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "mx-auto w-full md:w-[380px] h-screen md:h-auto",
+		className: "mx-auto w-[92vw] max-w-[380px]",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			className: "relative h-full md:h-auto md:rounded-[52px] md:border md:border-ink/20 md:bg-ink md:p-3 md:shadow-[0_50px_100px_-40px_rgba(24,24,40,0.5)]",
+			className: "relative rounded-[40px] md:rounded-[52px] border border-ink/20 bg-ink p-2 md:p-3 shadow-[0_30px_60px_-15px_rgba(24,24,40,0.3)]",
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "relative h-full overflow-hidden bg-paper md:rounded-[42px] flex flex-col",
+				className: "relative overflow-hidden rounded-[32px] md:rounded-[42px] bg-paper",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "hidden md:flex items-center justify-between px-6 pt-3 text-[11px] text-ink",
+						className: "flex items-center justify-between px-6 pt-3 text-[10px] md:text-[11px] text-ink select-none",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "font-mono tabular-nums",
 							children: "9:41"
@@ -201,9 +151,9 @@ function Phone({ children }) {
 							]
 						})]
 					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "hidden md:block absolute left-1/2 top-1 h-5 w-24 -translate-x-1/2 rounded-full bg-ink" }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute left-1/2 top-1 h-4 md:h-5 w-20 md:w-24 -translate-x-1/2 rounded-full bg-ink" }),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "flex-1 overflow-y-auto overscroll-contain px-6 pb-8 pt-6 md:h-[700px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+						className: "h-[520px] md:h-[700px] overflow-y-auto overscroll-contain px-4 md:px-6 pb-6 md:pb-8 pt-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
 						children
 					})
 				]

@@ -155,7 +155,6 @@ function PrototypePage() {
     >,
   );
   const [reviewIdx, setReviewIdx] = useState(0);
-  const [isNotesOpen, setIsNotesOpen] = useState(false);
 
   const go = (s: Step) => {
     console.log("[PrototypePage] go() called, target step:", s);
@@ -205,9 +204,9 @@ function PrototypePage() {
 
   return (
     <div className="min-h-screen bg-[oklch(0.94_0.005_85)] text-ink">
-      <main className="mx-auto grid max-w-6xl grid-cols-12 md:gap-10 md:px-6 md:py-12 p-0 h-screen md:h-auto overflow-hidden md:overflow-visible">
+      <main className="mx-auto grid max-w-6xl grid-cols-12 gap-10 px-6 py-12">
         {/* Phone */}
-        <section className="col-span-12 md:col-span-8 md:col-start-2 h-full md:h-auto w-full">
+        <section className="col-span-12 md:col-span-8 md:col-start-2">
           <Phone>
             <Screen
               step={step}
@@ -222,58 +221,11 @@ function PrototypePage() {
           </Phone>
         </section>
 
-        {/* Right rail — narrator (Desktop only) */}
-        <aside className="hidden md:block col-span-12 md:col-span-3">
+        {/* Right rail — narrator */}
+        <aside className="col-span-12 md:col-span-3">
           <Narrator step={step} optedIn={optedIn} />
         </aside>
       </main>
-
-      {/* Floating Design Notes button on mobile */}
-      <button
-        onClick={() => setIsNotesOpen(true)}
-        className="md:hidden fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-ink px-4 py-3 text-xs font-semibold uppercase tracking-wider text-paper shadow-2xl transition-transform active:scale-[0.97]"
-      >
-        <Sparkles className="h-4 w-4 text-vermillion animate-pulse" />
-        <span>Design Notes</span>
-      </button>
-
-      {/* Mobile Design Notes Bottom Drawer */}
-      {isNotesOpen && (
-        <>
-          {/* Overlay */}
-          <div
-            onClick={() => setIsNotesOpen(false)}
-            className="md:hidden fixed inset-0 z-50 bg-ink/40 backdrop-blur-sm"
-          />
-          {/* Bottom Sheet */}
-          <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 rounded-t-3xl bg-paper p-6 shadow-[0_-10px_30px_rgba(0,0,0,0.15)] border-t border-hairline transition-all duration-300 ease-out">
-            <div className="flex items-center justify-between border-b border-hairline pb-4">
-              <div className="flex items-center gap-2">
-                <Sparkles className="h-4 w-4 text-vermillion" />
-                <span className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">Product Thinking Notes</span>
-              </div>
-              <button
-                onClick={() => setIsNotesOpen(false)}
-                className="rounded-full bg-muted p-1.5 hover:bg-muted/80"
-              >
-                <X className="h-4 w-4 text-ink" />
-              </button>
-            </div>
-            <div className="py-4">
-              <div className="font-display text-2xl leading-tight tracking-tight text-ink">
-                {NOTES[step].t}
-              </div>
-              <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">{NOTES[step].d}</p>
-              <div className="mt-4 rounded-xl border border-hairline bg-card p-4">
-                <div className="text-[10px] uppercase tracking-[0.18em] text-vermillion">
-                  PM note
-                </div>
-                <div className="mt-1.5 text-[12px] leading-snug">{NOTES[step].pm}</div>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
     </div>
   );
 }
@@ -281,11 +233,11 @@ function PrototypePage() {
 /* ---------------- Phone frame ---------------- */
 function Phone({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto w-full md:w-[380px] h-screen md:h-auto">
-      <div className="relative h-full md:h-auto md:rounded-[52px] md:border md:border-ink/20 md:bg-ink md:p-3 md:shadow-[0_50px_100px_-40px_rgba(24,24,40,0.5)]">
-        <div className="relative h-full overflow-hidden bg-paper md:rounded-[42px] flex flex-col">
+    <div className="mx-auto w-[92vw] max-w-[380px]">
+      <div className="relative rounded-[40px] md:rounded-[52px] border border-ink/20 bg-ink p-2 md:p-3 shadow-[0_30px_60px_-15px_rgba(24,24,40,0.3)]">
+        <div className="relative overflow-hidden rounded-[32px] md:rounded-[42px] bg-paper">
           {/* Status bar */}
-          <div className="hidden md:flex items-center justify-between px-6 pt-3 text-[11px] text-ink">
+          <div className="flex items-center justify-between px-6 pt-3 text-[10px] md:text-[11px] text-ink select-none">
             <span className="font-mono tabular-nums">9:41</span>
             <div className="flex items-center gap-1.5 text-ink/70">
               <Signal className="h-3 w-3" />
@@ -296,8 +248,11 @@ function Phone({ children }: { children: ReactNode }) {
             </div>
           </div>
           {/* Notch */}
-          <div className="hidden md:block absolute left-1/2 top-1 h-5 w-24 -translate-x-1/2 rounded-full bg-ink" />
-          <div className="flex-1 overflow-y-auto overscroll-contain px-6 pb-8 pt-6 md:h-[700px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">{children}</div>
+          <div className="absolute left-1/2 top-1 h-4 md:h-5 w-20 md:w-24 -translate-x-1/2 rounded-full bg-ink" />
+          {/* Scrollable children container */}
+          <div className="h-[520px] md:h-[700px] overflow-y-auto overscroll-contain px-4 md:px-6 pb-6 md:pb-8 pt-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {children}
+          </div>
         </div>
       </div>
     </div>
