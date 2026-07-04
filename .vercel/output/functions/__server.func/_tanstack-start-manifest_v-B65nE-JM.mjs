@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-BvRCEqic.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-B65nE-JM.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "C:/Users/psk26/OneDrive/Desktop/projects/vedantu_pm/src/routes/__root.tsx",
@@ -7,35 +7,35 @@ var tsrStartManifest = () => ({ routes: {
 			"/deck",
 			"/prototype"
 		],
-		preloads: ["/assets/index-DLTNXEp1.js"],
+		preloads: ["/assets/index-Ds8Nbm1x.js"],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-DLTNXEp1.js"
+			src: "/assets/index-Ds8Nbm1x.js"
 		} }]
 	},
 	"/": {
 		filePath: "C:/Users/psk26/OneDrive/Desktop/projects/vedantu_pm/src/routes/index.tsx",
 		children: void 0,
-		preloads: ["/assets/routes-X9AYGSyn.js", "/assets/arrow-up-right-CVvhz5dI.js"]
+		preloads: ["/assets/routes-DKn4HcJN.js", "/assets/arrow-up-right-DhJUQeFt.js"]
 	},
 	"/deck": {
 		filePath: "C:/Users/psk26/OneDrive/Desktop/projects/vedantu_pm/src/routes/deck.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/deck-BHfc4PMk.js",
-			"/assets/createLucideIcon-BaonU0Qf.js",
-			"/assets/download-DT_fYXbd.js",
-			"/assets/arrow-up-right-CVvhz5dI.js"
+			"/assets/deck-Bz8n6jPN.js",
+			"/assets/createLucideIcon--wJ_WBNM.js",
+			"/assets/download-DhHvFJQM.js",
+			"/assets/arrow-up-right-DhJUQeFt.js"
 		]
 	},
 	"/prototype": {
 		filePath: "C:/Users/psk26/OneDrive/Desktop/projects/vedantu_pm/src/routes/prototype.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/prototype-BZ-mTiN3.js",
-			"/assets/createLucideIcon-BaonU0Qf.js",
-			"/assets/download-DT_fYXbd.js"
+			"/assets/prototype--XHgc6we.js",
+			"/assets/createLucideIcon--wJ_WBNM.js",
+			"/assets/download-DhHvFJQM.js"
 		]
 	}
 } });

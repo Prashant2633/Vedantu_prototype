@@ -3,7 +3,7 @@ import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tan
 import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as YAxis, c as Line, d as Pie, f as Cell, i as LineChart, l as CartesianGrid, m as Tooltip, n as PieChart, o as XAxis, p as ResponsiveContainer, r as BarChart, s as Area, t as AreaChart, u as Bar } from "../_libs/recharts+[...].mjs";
 import { b as ArrowLeft, c as Printer, g as Check, h as ChevronRight, m as Download, t as X, v as ArrowUpRight, y as ArrowRight } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/deck-Chx719GO.js
+//#region node_modules/.nitro/vite/services/ssr/assets/deck-w_Q4nGe2.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var SLIDES = [
@@ -48,14 +48,19 @@ var SLIDES = [
 		render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SlideMetrics, {})
 	},
 	{
-		id: "dashboard",
-		label: "Dashboard",
-		render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SlideDashboard, {})
+		id: "success",
+		label: "Success criteria",
+		render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SlideSuccess, {})
 	},
 	{
 		id: "diagnostic",
 		label: "Diagnostic",
 		render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SlideDiagnostic, {})
+	},
+	{
+		id: "dashboard",
+		label: "Dashboard",
+		render: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SlideDashboard, {})
 	},
 	{
 		id: "rollout",
@@ -939,7 +944,7 @@ function PhoneMini({ title, subtitle, children }) {
 function SlideMetrics() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Slide, {
 		index: 7,
-		eyebrow: "Metrics · success criteria",
+		eyebrow: "Metrics",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "grid h-full grid-cols-12 gap-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -1072,6 +1077,90 @@ function MetricCard({ tier, k, f, w, danger }) {
 		]
 	});
 }
+function SlideSuccess() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Slide, {
+		index: 8,
+		eyebrow: "Success criteria",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "grid h-full grid-cols-12 gap-8",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "col-span-4 flex flex-col justify-between",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "text-[10px] uppercase tracking-[0.22em] text-vermillion",
+						children: "Validation"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+						className: "mt-3 font-display text-[48px] leading-[0.98] tracking-tight text-ink",
+						children: ["How we know ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("em", {
+							className: "italic text-vermillion",
+							children: "it worked."
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "mt-3 text-[13px] leading-relaxed text-muted-foreground",
+						children: "Success is not just compliance. It is the intersection of regulatory integrity, zero conversion loss, and parental trust."
+					})
+				] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "rounded-2xl border border-hairline bg-muted p-4",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "text-[10px] uppercase tracking-[0.22em] text-muted-foreground",
+						children: "Core Philosophy"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "mt-1 text-[11px] leading-relaxed text-slate",
+						children: "\"If compliance kills the product, it fails. If the product evades compliance, the company fails. Success is when both thrive.\""
+					})]
+				})]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "col-span-8 grid grid-cols-2 gap-3",
+				children: [
+					{
+						c: "Compliance Integrity",
+						g: "100% compliant minors",
+						m: "Audit trails show zero active under-18 users with unconsented tracking or missing parental approvals.",
+						badge: "Non-negotiable"
+					},
+					{
+						c: "Mitigated Friction",
+						g: "Conversion drop ≤ 2pp",
+						m: "Ensure the progressive parental verification gate doesn't cause a drop in final classroom conversions.",
+						badge: "Product health"
+					},
+					{
+						c: "Parental Engagement",
+						g: "≥ 75% verification rate",
+						m: "Minors' invited parents successfully complete the Rs.1 UPI proxy or SMS approval loop within the 7-day grace period.",
+						badge: "Channel efficacy"
+					},
+					{
+						c: "User Autonomy",
+						g: "Withdrawals ≤ 5%",
+						m: "User trust remains steady. A low withdrawal rate confirms privacy settings are transparent and easy to use.",
+						badge: "Trust health"
+					}
+				].map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "rounded-xl border border-hairline bg-card p-4 flex flex-col justify-between",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center justify-between",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-[9px] uppercase tracking-[0.2em] text-vermillion font-medium",
+							children: item.c
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "rounded bg-muted px-1.5 py-0.5 font-mono text-[8px] text-muted-foreground",
+							children: item.badge
+						})]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+						className: "mt-2 text-[18px] font-display text-ink leading-snug",
+						children: item.g
+					})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "mt-2 text-[11px] leading-relaxed text-muted-foreground border-t border-hairline pt-2.5",
+						children: item.m
+					})]
+				}, item.c))
+			})]
+		})
+	});
+}
 var trend = [
 	{
 		w: "W1",
@@ -1183,7 +1272,7 @@ var COLORS = [
 ];
 function SlideDashboard() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Slide, {
-		index: 8,
+		index: 10,
 		eyebrow: "Dashboard · consent health",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "grid h-full grid-cols-12 gap-3",
@@ -1687,7 +1776,7 @@ function NextCard({ t, a, highlight }) {
 }
 function SlideRollout() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Slide, {
-		index: 10,
+		index: 11,
 		eyebrow: "Rollout · validation",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "grid h-full grid-cols-12 gap-8",
@@ -1866,7 +1955,7 @@ function MiniStat({ k, v, note }) {
 }
 function SlideRisks() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Slide, {
-		index: 11,
+		index: 12,
 		eyebrow: "Risks · trade-offs · vision",
 		bg: "ink",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {

@@ -54,8 +54,9 @@ const SLIDES: { id: string; label: string; render: () => ReactNode }[] = [
   { id: "solution", label: "Solution", render: () => <SlideSolution /> },
   { id: "ux", label: "UX & prototype", render: () => <SlideUX /> },
   { id: "metrics", label: "Metrics", render: () => <SlideMetrics /> },
-  { id: "dashboard", label: "Dashboard", render: () => <SlideDashboard /> },
+  { id: "success", label: "Success criteria", render: () => <SlideSuccess /> },
   { id: "diagnostic", label: "Diagnostic", render: () => <SlideDiagnostic /> },
+  { id: "dashboard", label: "Dashboard", render: () => <SlideDashboard /> },
   { id: "rollout", label: "Rollout", render: () => <SlideRollout /> },
   { id: "risks", label: "Risks & vision", render: () => <SlideRisks /> },
   { id: "thankyou", label: "Thank you", render: () => <SlideThankYou /> },
@@ -815,7 +816,7 @@ function PhoneMini({
 /* --- 8. Metrics -------------------------------------------------- */
 function SlideMetrics() {
   return (
-    <Slide index={7} eyebrow="Metrics · success criteria">
+    <Slide index={7} eyebrow="Metrics">
       <div className="grid h-full grid-cols-12 gap-8">
         <div className="col-span-5 flex flex-col justify-between rounded-2xl border border-hairline bg-ink p-7 text-paper">
           <div>
@@ -930,7 +931,91 @@ function MetricCard({
   );
 }
 
-/* --- 9. Dashboard ------------------------------------------------ */
+/* --- 8. Success Criteria ----------------------------------------- */
+function SlideSuccess() {
+  const successItems = [
+    {
+      c: "Compliance Integrity",
+      g: "100% compliant minors",
+      m: "Audit trails show zero active under-18 users with unconsented tracking or missing parental approvals.",
+      badge: "Non-negotiable",
+    },
+    {
+      c: "Mitigated Friction",
+      g: "Conversion drop ≤ 2pp",
+      m: "Ensure the progressive parental verification gate doesn't cause a drop in final classroom conversions.",
+      badge: "Product health",
+    },
+    {
+      c: "Parental Engagement",
+      g: "≥ 75% verification rate",
+      m: "Minors' invited parents successfully complete the Rs.1 UPI proxy or SMS approval loop within the 7-day grace period.",
+      badge: "Channel efficacy",
+    },
+    {
+      c: "User Autonomy",
+      g: "Withdrawals ≤ 5%",
+      m: "User trust remains steady. A low withdrawal rate confirms privacy settings are transparent and easy to use.",
+      badge: "Trust health",
+    },
+  ];
+
+  return (
+    <Slide index={8} eyebrow="Success criteria">
+      <div className="grid h-full grid-cols-12 gap-8">
+        <div className="col-span-4 flex flex-col justify-between">
+          <div>
+            <div className="text-[10px] uppercase tracking-[0.22em] text-vermillion">
+              Validation
+            </div>
+            <h2 className="mt-3 font-display text-[48px] leading-[0.98] tracking-tight text-ink">
+              How we know <em className="italic text-vermillion">it worked.</em>
+            </h2>
+            <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">
+              Success is not just compliance. It is the intersection of regulatory integrity, zero conversion loss, and parental trust.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-hairline bg-muted p-4">
+            <div className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+              Core Philosophy
+            </div>
+            <p className="mt-1 text-[11px] leading-relaxed text-slate">
+              "If compliance kills the product, it fails. If the product evades compliance, the company fails. Success is when both thrive."
+            </p>
+          </div>
+        </div>
+
+        <div className="col-span-8 grid grid-cols-2 gap-3">
+          {successItems.map((item) => (
+            <div key={item.c} className="rounded-xl border border-hairline bg-card p-4 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="text-[9px] uppercase tracking-[0.2em] text-vermillion font-medium">
+                    {item.c}
+                  </span>
+                  <span className="rounded bg-muted px-1.5 py-0.5 font-mono text-[8px] text-muted-foreground">
+                    {item.badge}
+                  </span>
+                </div>
+                <h3 className="mt-2 text-[18px] font-display text-ink leading-snug">
+                  {item.g}
+                </h3>
+              </div>
+              <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground border-t border-hairline pt-2.5">
+                {item.m}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Slide>
+  );
+}
+
+/* --- 9. Diagnostic ----------------------------------------------- */
+// Note: Component definition follows below under its numerical position.
+
+/* --- 10. Dashboard ----------------------------------------------- */
 const trend = [
   { w: "W1", vcc: 71, target: 92 },
   { w: "W2", vcc: 74, target: 92 },
@@ -965,7 +1050,7 @@ const COLORS = ["oklch(0.62 0.19 32)", "oklch(0.185 0.02 260)", "oklch(0.52 0.09
 
 function SlideDashboard() {
   return (
-    <Slide index={8} eyebrow="Dashboard · consent health">
+    <Slide index={10} eyebrow="Dashboard · consent health">
       <div
         className="grid h-full grid-cols-12 gap-3"
         style={{ gridTemplateRows: "minmax(0, 108px) minmax(0, 240px) minmax(0, 1fr)" }}
@@ -1149,7 +1234,7 @@ function ChartHead({ k, note }: { k: string; note: string }) {
   );
 }
 
-/* --- 10. Diagnostic --------------------------------------------- */
+/* --- 9. Diagnostic Thinking ------------------------------------- */
 function SlideDiagnostic() {
   const branches = [
     {
@@ -1281,7 +1366,7 @@ function NextCard({ t, a, highlight }: { t: string; a: string; highlight?: boole
   );
 }
 
-/* --- 11. Rollout ------------------------------------------------ */
+/* --- 11. Rollout Plan ------------------------------------------- */
 function SlideRollout() {
   const phases = [
     { p: "Week 0", n: "Dogfood", d: "Vedantu employees + kids · full flow", ga: "Zero P0/P1 defects" },
@@ -1292,7 +1377,7 @@ function SlideRollout() {
     { p: "Week 8", n: "100% GA", d: "Migrate legacy accounts · 30-day window", ga: "VCC ≥ 85%" },
   ];
   return (
-    <Slide index={10} eyebrow="Rollout · validation">
+    <Slide index={11} eyebrow="Rollout · validation">
       <div className="grid h-full grid-cols-12 gap-8">
         <div className="col-span-4">
           <h2 className="font-display text-[46px] leading-[1.02] tracking-tight">
@@ -1391,7 +1476,7 @@ function MiniStat({ k, v, note }: { k: string; v: string; note: string }) {
   );
 }
 
-/* --- 12. Risks & Vision ----------------------------------------- */
+/* --- 12. Risks & Trade-offs ------------------------------------- */
 function SlideRisks() {
   const risks = [
     {
@@ -1426,7 +1511,7 @@ function SlideRisks() {
     },
   ];
   return (
-    <Slide index={11} eyebrow="Risks · trade-offs · vision" bg="ink">
+    <Slide index={12} eyebrow="Risks · trade-offs · vision" bg="ink">
       <div className="grid h-full grid-cols-12 gap-8">
         <div className="col-span-5 flex flex-col justify-between">
           <div>
